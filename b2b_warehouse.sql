@@ -75,16 +75,16 @@ CREATE TABLE dim_customer (
 
 
 CREATE TABLE dim_supplier (
-supplier_id bigserial NOT NULL,
-supplier_type varchar(20) NOT NULL,
-contact_full_name varchar(120) NOT NULL,
-contact_title varchar(8) NOT NULL,
-supplier_address varchar(50) NOT NULL,
-city varchar(20) NOT NULL,
-region varchar(20) NOT NULL,
-country varchar(20) NOT NULL,
-country_code varchar(2) NOT NULL,
-phone varchar(20) NOT NULL,
-CONSTRAINT pk_dim_supplier
-PRIMARY KEY (supplier_id)
+	supplier_id bigserial NOT NULL,
+	supplier_type varchar(20) NOT NULL,
+	contact_full_name varchar(120) NOT NULL,
+	contact_title varchar(8) NOT NULL,
+	supplier_address varchar(50) NOT NULL,
+	city varchar(20) NOT NULL,
+	region varchar(20) NOT NULL,
+	country varchar(20) NOT NULL,
+	country_code varchar(2) NOT NULL,
+	phone varchar(20) NOT NULL,
+	CONSTRAINT pk_dim_supplier
+	PRIMARY KEY (supplier_id)
 );
