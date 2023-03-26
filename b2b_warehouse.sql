@@ -1,4 +1,4 @@
-CREATE TABLE fact_sales (
+CREATE TABLE IF NOT EXISTS fact_sales (
 	sales_id bigserial NOT NULL,
 	transation_number integer NOT NULL UNIQUE,
 	product_id bigint NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE fact_sales (
 	PRIMARY KEY (sales_id)
 );
 
-CREATE TABLE dim_order(
+CREATE TABLE IF NOT EXISTS dim_order(
 	order_id integer NOT NULL UNIQUE,
 	order_code varchar(20) NOT NULL,
 	order_status varchar(20) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE dim_order(
 	PRIMARY KEY (order_id)
 );
 
-CREATE TABLE dim_product (
+CREATE TABLE IF NOT EXISTS dim_product (
 	product_id bigserial NOT NULL,
 	product_stock_id integer NOT NULL,
 	product_code varchar(12) NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE dim_product (
 	PRIMARY KEY (product_id)
 );
 
-CREATE TABLE dim_product_stock (
+CREATE TABLE IF NOT EXISTS dim_product_stock (
 	products_stock_id integer NOT NULL UNIQUE,
 	units_is_stock integer NOT NULL,
 	units_on_order integer NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE dim_product_stock (
 	PRIMARY KEY (products_stock_id)
 );
 
-CREATE TABLE dim_date (
+CREATE TABLE IF NOT EXISTS dim_date (
 	date_id bigserial NOT NULL,
 	date timestamp with time zone NOT NULL,
 	calendar_year smallint NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE dim_date (
 	PRIMARY KEY (date_id)
 );
 
-CREATE TABLE dim_customer (
+CREATE TABLE IF NOT EXISTS dim_customer (
 	customer_id bigserial NOT NULL,
 	company_name varchar(120),
 	customer_type varchar(20) NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE dim_customer (
 );
 
 
-CREATE TABLE dim_supplier (
+CREATE TABLE IF NOT EXISTS dim_supplier (
 	supplier_id bigserial NOT NULL,
 	supplier_type varchar(20) NOT NULL,
 	contact_full_name varchar(120) NOT NULL,
